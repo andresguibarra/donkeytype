@@ -65,6 +65,8 @@ let timeLeft = 60
 let interval
 let score = 0
 
+checkFirstTime()
+
 function startGame() {
   clearInterval(interval)
   inputElement.disabled = false
@@ -76,6 +78,25 @@ function startGame() {
   updateTimer()
   displayHighScore()
   inputElement.addEventListener('input', startTimer)
+}
+
+function hideInstructions() {
+  const instructionsElement = document.getElementById('instructions')
+  instructionsElement.classList.add('fade-out')
+}
+
+function showInstructions() {
+  const instructionsElement = document.getElementById('instructions')
+  instructionsElement.classList.add('fade-in')
+}
+
+function checkFirstTime() {
+  const firstTime = localStorage.getItem('firstTime')
+  if (firstTime !== 'false') {
+    showInstructions()
+    localStorage.setItem('firstTime', 'false')
+  }
+  inputElement.addEventListener('input', hideInstructions)
 }
 
 function displayWord() {
@@ -120,7 +141,10 @@ function pickRandomWord() {
 }
 
 function normalizeText(text) {
-  return text.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  return text
+    .toLocaleLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
 }
 
 function clearLetterBackgrounds() {

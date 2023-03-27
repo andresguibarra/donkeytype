@@ -9,7 +9,30 @@ h1 {
     font-size: 2rem;
 }
 
-#timer, #score, #high-score {
+.instructions {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.instructions.fade-in {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.instructions.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#timer,
+#score,
+#high-score {
     font-size: 1.2rem;
 }
 
@@ -17,7 +40,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 3rem;
     margin-bottom: 3rem;
 }
 
@@ -96,7 +119,8 @@ input[type="text"] {
 }
 
 #title {
-    font-family: 'Roboto', sans-serif; /* Fuente delgada y elegante */
+    font-family: 'Roboto', sans-serif;
+    /* Fuente delgada y elegante */
     font-weight: 300;
     font-size: 2.5rem;
     border: 2px solid #333;
@@ -117,10 +141,14 @@ input[type="text"] {
 
 /* Animación del cursor titilante */
 @keyframes blink {
-    0%, 49% {
+
+    0%,
+    49% {
         opacity: 1;
     }
-    50%, 100% {
+
+    50%,
+    100% {
         opacity: 0;
     }
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donkeytype</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1><span id="title">DONKEYTYPE<span id="cursor">_</span></span></h1>
+        <div class="word-input-container">
+            <div id="word-container"></div>
+            <input type="text" id="input" autocomplete="off" autofocus>
+        </div>
+        <div class="info-container">
+            <div class="info-item">
+                <img src="icon-timer.svg" alt="Timer" class="info-icon">
+                <span class="info-label">Tiempo:</span> <span id="timer" class="info-value">60s</span>
+            </div>
+            <div class="info-item">
+                <img src="icon-score.svg" alt="Score" class="info-icon">
+                <span class="info-label">Palabras acertadas:</span> <span id="score" class="info-value">0</span>
+            </div>
+            <div class="info-item">
+                <img src="icon-high-score.svg" alt="High Score" class="info-icon">
+                <span class="info-label">Puntaje más alto:</span> <span id="high-score" class="info-value">0</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

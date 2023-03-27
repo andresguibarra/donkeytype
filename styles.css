@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+#timer, #score, #high-score {
+    font-size: 1.2rem;
+}
+
+.word-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.info-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.info-label {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.info-value {
+    text-align: right;
+}
+
+#word-container {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.letter {
+    display: inline-block;
+    width: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.correct {
+    background-color: #4CAF50;
+}
+
+.wrong {
+    background-color: #F44336;
+}
+
+input[type="text"] {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    width: 60%;
+    max-width: 300px;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    input[type="text"] {
+        max-width: none;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 769px) {
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+#title {
+    font-family: 'Roboto', sans-serif; /* Fuente delgada y elegante */
+    font-weight: 300;
+    font-size: 2.5rem;
+    border: 2px solid #333;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Estilos para el cursor titilante */
+#cursor {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2.5rem;
+    animation: blink 1s infinite;
+    margin-left: 0.25rem;
+}
+
+/* Animación del cursor titilante */
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}

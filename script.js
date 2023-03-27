@@ -120,7 +120,7 @@ function pickRandomWord() {
 }
 
 function normalizeText(text) {
-  return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  return text.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
 
 function clearLetterBackgrounds() {
@@ -179,7 +179,7 @@ function updateTimer() {
     let message = '¡Tiempo agotado! Tu cantidad de palabras fue: ' + score
     if (score > highScore) {
       updateHighScore(score)
-      message += ' ¡Felicidades! Has establecido un nuevo puntaje más alto: ' + score
+      message += '\n ¡Felicidades! Has establecido un nuevo puntaje más alto: ' + score
     }
     message += '\nGracias por jugar. '
     alert(message)

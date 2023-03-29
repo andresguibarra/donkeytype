@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,11 @@
             Escribe la palabra mostrada en la pantalla. ¡Tienes 60 segundos!
         </div>
         <div class="word-input-container">
-            <div id="word-container"></div>
+            <div class="word-and-next-word">
+                <div id="word-container">
+                </div>
+                <div class="next-word" id="next-word"></div>
+            </div>
             <input type="text" id="input" autocomplete="off" autofocus>
         </div>
         <div class="info-container">
@@ -35,6 +39,7 @@
             </div>
         </div>
     </div>
+    <script src="words.js"></script>
     <script src="script.js"></script>
 </body>
 

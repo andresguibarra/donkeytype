@@ -1,59 +1,7 @@
 const wordContainer = document.getElementById('word-container')
 const inputElement = document.getElementById('input')
 const timerElement = document.getElementById('timer')
-
-const wordsList = [
-  'ejemplo',
-  'teclado',
-  'velocidad',
-  'desarrollo',
-  'código',
-  'guitarra',
-  'computadora',
-  'elefante',
-  'biblioteca',
-  'pantalla',
-  'aventura',
-  'mariposa',
-  'bicicleta',
-  'planeta',
-  'estrella',
-  'edificio',
-  'jirafa',
-  'entusiasmo',
-  'cuaderno',
-  'inteligencia',
-  'pescado',
-  'automóvil',
-  'reloj',
-  'lápiz',
-  'teléfono',
-  'montaña',
-  'escritorio',
-  'silla',
-  'galleta',
-  'ratón',
-  'sombrero',
-  'paraguas',
-  'canguro',
-  'murciélago',
-  'piano',
-  'ventana',
-  'almohada',
-  'espejo',
-  'refrigerador',
-  'tren',
-  'cápsula',
-  'pirámide',
-  'fotografía',
-  'globo',
-  'cemento',
-  'zoológico',
-  'periscopio',
-  'tortuga',
-  'escarabajo',
-  'colina'
-]
+const nextWordElement = document.getElementById('next-word')
 
 const words = {
   original: wordsList,
@@ -64,6 +12,7 @@ let currentWord = ''
 let timeLeft = 60
 let interval
 let score = 0
+let nextWord = ''
 
 checkFirstTime()
 
@@ -130,15 +79,26 @@ function updateScore() {
 }
 
 function pickRandomWord() {
-  if (words.remaining.length === 0) {
-    words.remaining = [...words.original]
+  // La siguiente palabra se convierte en la palabra actual
+  currentWord = nextWord;
+  displayWord();
+
+  if (words.remaining.length === 1) {
+    // Si solo queda una palabra en la lista de palabras restantes, reinicia la lista
+    words.remaining = [...words.original];
+  } else {
+    // Elimina la palabra actual de las palabras restantes
+    const currentWordIndex = words.remaining.indexOf(currentWord);
+    words.remaining.splice(currentWordIndex, 1);
   }
 
-  const randomIndex = Math.floor(Math.random() * words.remaining.length)
-  currentWord = words.remaining[randomIndex]
-  words.remaining.splice(randomIndex, 1)
-  displayWord()
+  // Selecciona y muestra la siguiente palabra
+  const nextWordIndex = Math.floor(Math.random() * words.remaining.length);
+  nextWord = words.remaining[nextWordIndex];
+  nextWordElement.textContent = nextWord;
+
 }
+pickRandomWord();
 
 function normalizeText(text) {
   return text

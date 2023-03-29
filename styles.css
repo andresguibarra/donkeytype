@@ -75,9 +75,18 @@ h1 {
     text-align: right;
 }
 
+.word-and-next-word {
+    margin-bottom: 1.5rem;
+}
+
 #word-container {
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+}
+
+.next-word {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.15);
 }
 
 .letter {
